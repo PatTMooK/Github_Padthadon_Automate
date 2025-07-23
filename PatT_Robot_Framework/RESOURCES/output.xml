@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-07-23T20:02:30.930878" rpa="false" schemaversion="5">
+<suite id="s1" name="KEYWORDS" source="C:\Users\padth\OneDrive\เอกสาร\GitHub\Github_Padthadon_Automate\PatT_Robot_Framework\RESOURCES\KEYWORDS.robot">
+<test id="s1-t1" name="Check Status Code" line="5">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-07-23T20:02:31.540769" level="INFO">Creating Session using : alias=reqres, url=https://reqres.in/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>reqres</arg>
+<arg>https://reqres.in/api</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-07-23T20:02:31.540509" elapsed="0.000514"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-07-23T20:02:32.214651" level="INFO">GET Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-07-23T20:02:32.214928" level="INFO">GET Response : url=https://reqres.in/api/users/2 
+ status=401, reason=Unauthorized 
+ headers={'Date': 'Wed, 23 Jul 2025 13:02:32 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '72', 'Connection': 'keep-alive', 'CF-RAY': '963b5f67a84e9bae-BKK', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"48-+Z5A4MsbyryWjwqUCtZ7548heDc"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Ratelimit-Limit': '100', 'Ratelimit-Policy': '100;w=60', 'Ratelimit-Remaining': '99', 'Ratelimit-Reset': '60', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=S9D7S7pqzQAsiCQmOr38IqVmFofYYVYxTFQk1WFjhRk%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1753275752"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=S9D7S7pqzQAsiCQmOr38IqVmFofYYVYxTFQk1WFjhRk%3D&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;ts=1753275752"', 'Via': '1.1 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'X-Request-Id': 'f778bcaf-ffa4-30ca-14a4-745a776ddc05', 'X-Xss-Protection': '1; mode=block', 'CF-Cache-Status': 'BYPASS', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=3902&amp;min_rtt=3869&amp;rtt_var=1517&amp;sent=5&amp;recv=6&amp;lost=0&amp;retrans=0&amp;sent_bytes=2832&amp;recv_bytes=770&amp;delivery_rate=987176&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=24847d726a822ee6&amp;ts=618&amp;x=0"'} 
+ body={"error":"Missing API key.","how_to_get_one":"https://reqres.in/signup"} 
+ </msg>
+<msg time="2025-07-23T20:02:32.215140" level="INFO">C:\Users\padth\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-07-23T20:02:32.215637" level="FAIL">HTTPError: 401 Client Error: Unauthorized for url: https://reqres.in/api/users/2</msg>
+<var>${resp}</var>
+<arg>reqres</arg>
+<arg>/users/2</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2025-07-23T20:02:31.541363" elapsed="0.677880">HTTPError: 401 Client Error: Unauthorized for url: https://reqres.in/api/users/2</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${resp.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-23T20:02:32.219712" elapsed="0.000050"/>
+</kw>
+<status status="FAIL" start="2025-07-23T20:02:31.539368" elapsed="0.680872">HTTPError: 401 Client Error: Unauthorized for url: https://reqres.in/api/users/2</status>
+</test>
+<status status="FAIL" start="2025-07-23T20:02:30.934127" elapsed="1.288501"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="KEYWORDS" id="s1" pass="0" fail="1" skip="0">KEYWORDS</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
