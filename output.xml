@@ -1,65 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-07-23T20:54:12.350335" rpa="false" schemaversion="5">
-<suite id="s1" name="TC01 HTTP Code Validate" source="c:\Users\padth\OneDrive\เอกสาร\GitHub\Github_Padthadon_Automate\PatT_Robot_Framework\TESTCASE\TC01_HTTP_Code_Validate.robot">
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2026-01-20T21:19:48.549359" rpa="false" schemaversion="5">
+<suite id="s1" name="TC01 Verify API" source="c:\Users\padth\OneDrive\เอกสาร\GitHub\Github_Padthadon_Automate\PatT_Robot_Framework\TESTCASE\TC01_Verify_API.robot">
 <kw name="Create Session" owner="RequestsLibrary" type="SETUP">
-<msg time="2025-07-23T20:54:13.059200" level="INFO">Creating Session using : alias=reqres, url=https://reqres.in/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>reqres</arg>
-<arg>${Req_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-07-23T20:54:13.058711" elapsed="0.004447"/>
-</kw>
-<test id="s1-t1" name="TC01_Code_200_Success" line="9">
-<kw name="GET request And status_code" owner="KEYWORDS">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-07-23T20:54:13.066210" level="INFO">Creating Session using : alias=reqres, url=https://reqres.in/api, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<msg time="2026-01-20T21:19:49.265141" level="INFO">Creating Session using : alias=reqres, url=https://api.restful-api.dev/, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
 <arg>reqres</arg>
 <arg>${Req_URL}</arg>
 <arg>headers=${reqres_Headers}</arg>
-<arg>verify=${True}</arg>
+<arg>verify=True</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-07-23T20:54:13.065532" elapsed="0.002121"/>
+<status status="PASS" start="2026-01-20T21:19:49.264298" elapsed="0.004877"/>
 </kw>
+<test id="s1-t1" name="TC03_Found_Data&amp;verify" line="15">
+<kw name="GET Body And verify" owner="KEYWORDS">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-07-23T20:54:13.205542" level="INFO">GET Request : url=https://reqres.in/api/users/2 
- path_url=/api/users/2 
+<msg time="2026-01-20T21:19:49.568927" level="INFO">GET Request : url=https://api.restful-api.dev/objects/7 
+ path_url=/objects/7 
  headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
  body=None 
  </msg>
-<msg time="2025-07-23T20:54:13.205900" level="INFO">GET Response : url=https://reqres.in/api/users/2 
+<msg time="2026-01-20T21:19:49.570230" level="INFO">GET Response : url=https://api.restful-api.dev/objects/7 
  status=200, reason=OK 
- headers={'Date': 'Wed, 23 Jul 2025 13:54:13 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Content-Encoding': 'gzip', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"152-ApQgGHL6RKwaebFlrPCYPBO1xHg"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Ratelimit-Limit': '100', 'Ratelimit-Policy': '100;w=60', 'Ratelimit-Remaining': '98', 'Ratelimit-Reset': '60', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=8ummOR39zTIfZXJibVqzrdIqg5%2B2NxAEnX1HfAGNEvk%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1753276744"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=8ummOR39zTIfZXJibVqzrdIqg5%2B2NxAEnX1HfAGNEvk%3D&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;ts=1753276744"', 'Via': '1.1 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'X-Request-Id': 'e5cc4c30-12b1-126b-572a-69996d41a74b', 'X-Xss-Protection': '1; mode=block', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '2109', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '963bab207ac7fde8-SIN', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=34101&amp;min_rtt=33877&amp;rtt_var=12864&amp;sent=5&amp;recv=6&amp;lost=0&amp;retrans=0&amp;sent_bytes=2833&amp;recv_bytes=802&amp;delivery_rate=120435&amp;cwnd=253&amp;unsent_bytes=0&amp;cid=e5ec79ffb5473e71&amp;ts=56&amp;x=0"'} 
- body={"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}} 
+ headers={'Date': 'Tue, 20 Jan 2026 14:19:53 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Server': 'cloudflare', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'cf-cache-status': 'DYNAMIC', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=4APJfbYozBcxSvu4YKBs4MtoQUupHLf7Dzg1tt4RpgngGLox1TBKK4qDjtJ%2FoUht69n94w4KXPh%2B%2B2VAG3o%2FKXhSQ4DatpB5FODq1IFAJzoZZ5SuBnvDqK90yNSvu%2B4%3D"}]}', 'Content-Encoding': 'gzip', 'CF-RAY': '9c0f35987f4c81d1-SIN', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":"7","name":"Apple MacBook Pro 16","data":{"year":2019,"price":1849.99,"CPU model":"Intel Core i9","Hard disk size":"1 TB"}} 
  </msg>
-<msg time="2025-07-23T20:54:13.206290" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-01-20T21:19:49.570615" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>reqres</arg>
-<arg>${endpoint}</arg>
+<arg>${PATHfortestHTTP}</arg>
+<arg>expected_status=ANY</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-07-23T20:54:13.068016" elapsed="0.138480"/>
+<status status="PASS" start="2026-01-20T21:19:49.271654" elapsed="0.299127"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-07-23T20:54:13.207803" level="INFO">Response Code: 200</msg>
-<arg>Response Code: ${response.status_code}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-07-23T20:54:13.206833" elapsed="0.001197"/>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2026-01-20T21:19:49.571951" level="INFO">${BodyRespone} = {"id":"7","name":"Apple MacBook Pro 16","data":{"year":2019,"price":1849.99,"CPU model":"Intel Core i9","Hard disk size":"1 TB"}}</msg>
+<var>${BodyRespone}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2026-01-20T21:19:49.571077" elapsed="0.001068"/>
 </kw>
-<kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-07-23T20:54:13.208923" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${response.status_code}</arg>
-<arg>${httpcodeexpected_status}</arg>
-<doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-07-23T20:54:13.208262" elapsed="0.000859"/>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${BodyRespone}</arg>
+<arg>${Bodyexpectrd_respone}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-01-20T21:19:49.572391" elapsed="0.000348"/>
 </kw>
-<arg>/users/2</arg>
-<arg>200</arg>
-<status status="PASS" start="2025-07-23T20:54:13.064858" elapsed="0.144439"/>
+<arg>objects/7</arg>
+<arg>Apple MacBook Pro 16</arg>
+<status status="PASS" start="2026-01-20T21:19:49.270968" elapsed="0.301943"/>
 </kw>
-<status status="PASS" start="2025-07-23T20:54:13.063671" elapsed="0.146192"/>
+<status status="PASS" start="2026-01-20T21:19:49.269702" elapsed="0.303945"/>
 </test>
-<doc>ตรวจสอบ HTTP Status Code จาก API ของ Reqres.in</doc>
-<status status="PASS" start="2025-07-23T20:54:12.361805" elapsed="0.849657"/>
+<doc>ตรวจสอบ  API ของ Reqres.in</doc>
+<status status="PASS" start="2026-01-20T21:19:48.557260" elapsed="1.020335"/>
 </suite>
 <statistics>
 <total>
@@ -68,7 +60,7 @@
 <tag>
 </tag>
 <suite>
-<stat name="TC01 HTTP Code Validate" id="s1" pass="1" fail="0" skip="0">TC01 HTTP Code Validate</stat>
+<stat name="TC01 Verify API" id="s1" pass="1" fail="0" skip="0">TC01 Verify API</stat>
 </suite>
 </statistics>
 <errors>
