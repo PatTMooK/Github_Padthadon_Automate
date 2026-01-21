@@ -12,9 +12,9 @@ Test Teardown    Close Browser
 Check Box Selection Test  #ทดสอบการเลือก Check Box ในหน้า DemoQA
     Go To    ${Demoqa_URL}
     # คลิกที่ Elements และเลือกเมนู Check Box
-    Click    ${CB_CARD_ELEMENTS}
+    Click    ${CARD_ELEMENTS}
     Click    ${CB_MENU_CHECKBOX}
-    # ขยายรายการทั้งหมดและเลือก Desktop
+    # ขยายรายการทั้งหมดและเลือก Desktop 
     Click    ${CB_BTN_EXPAND}
     Click    ${CB_CHCK_DESKTOP}
     # การ Assert (ตรวจสอบว่ามองเห็นข้อความ You have selected หรือไม่)
