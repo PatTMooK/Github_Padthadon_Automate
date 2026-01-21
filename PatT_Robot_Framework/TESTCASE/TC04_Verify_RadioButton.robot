@@ -11,7 +11,7 @@ Test Teardown    Close Browser
 *** Test Cases ***
 Click RadioButton Test    #ทดสอบการเลือก RadioButton ในหน้า DemoQA
     Go To    ${Demoqa_URL}
-    # คลิกที่ Elements และเลือกเมนู Buttons
+    # คลิกที่ Elements และเลือกเมนู RadioButton
     Click    ${CARD_ELEMENTS}
     Click    ${RB_MENU_RadioButton}
     # คลิกที่ Click Me 
