@@ -1,6 +1,7 @@
 *** Settings ***
 Library    RequestsLibrary
 Library    Collections
+Library    Browser
 Resource   ../RESOURCES/VARIABLES.robot
 
 *** Keywords ***
@@ -14,3 +15,6 @@ GET Body And verify  [Arguments]    ${PATHfortestHTTP}    ${Bodyexpectrd_respone
                      ${BodyRespone}=    Convert To String    ${response.content}
                      Should Contain    ${BodyRespone}    ${Bodyexpectrd_respone}
 
+Open My Browser
+    New Browser   browser=chromium    headless=False
+    New Page       ${Demoqa_URL} 

@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    ตรวจสอบ  API ของ Reqres.in
+Documentation    ตรวจสอบ  API ของ api.restful-api.dev
 Resource         ../RESOURCES/KEYWORDS.robot
 Resource         ../RESOURCES/VARIABLES.robot
 Suite Setup      Create Session    reqres    ${Req_URL}   headers=${reqres_Headers}   verify=True   

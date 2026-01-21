@@ -6,8 +6,8 @@ test.describe('API TEST', () => {
     
 test('Test API Get true endpoint', async ({ request }) => {
     // ตวรจสอบ API ต้องใช้ async ({ request })
-    const Response = await request.get('https://reqres.in/api/users/2');
-    // ตั้งตัวแปล response ใช้ส่ง HTTP GET request ไปที่ URL 'https://reqres.in/api/users/2'
+    const Response = await request.get('https://api.restful-api.dev/objects/1');
+    // ตั้งตัวแปล response ใช้ส่ง HTTP GET request ไปที่ URL 'hhttps://api.restful-api.dev/objects/1'
     expect.soft (Response.status()).toBe(200);
     // response จะเก็บค่าที่ได้จาก API หลังจาก request.get() ทำงานเสร็จ , .toBe(200) คือ Status code 200=Success
     const ResponseBody = await Response.json();
@@ -18,8 +18,8 @@ test('Test API Get true endpoint', async ({ request }) => {
 
 
 test('Test API Get wrong endpoint', async ({ request }) => {
-    const Response = await request.get('https://reqres.in//api/users/2');
-    // ตั้งตัวแปล response ใช้ส่ง HTTP GET request ไปที่ URL 'https://reqres.in//api/users/2'
+    const Response = await request.get('https://api.restful-api.dev/objects/1000');
+    // ตั้งตัวแปล response ใช้ส่ง HTTP GET request ไปที่ URL 'https://api.restful-api.dev/objects/100'
     expect.soft (Response.status()).toBe(404);
     //  response จะเก็บค่าที่ได้จาก API หลังจาก request.get() ทำงานเสร็จ , .toBe(404) คือ Status code 404=Not Found
     
@@ -27,17 +27,21 @@ test('Test API Get wrong endpoint', async ({ request }) => {
 
 test('Test API Get & Verify Body', async ({ request }) => {
     // ตวรจสอบ API ต้องใช้ async ({ request })
-    const Response = await request.get('https://reqres.in/api/users/2');
-    // ตั้งตัวแปล response ใช้ส่ง HTTP GET request ไปที่ URL 'https://reqres.in/api/users/2'
+    const Response = await request.get('https://api.restful-api.dev/objects/1');
+    // ตั้งตัวแปล response ใช้ส่ง HTTP GET request ไปที่ URL 'https://api.restful-api.dev/objects/1'
     expect.soft (Response.status()).toBe(200);
     // response จะเก็บค่าที่ได้จาก API หลังจาก request.get() ทำงานเสร็จ , .toBe(200) คือ Status code 200=Success
     const ResponseBody = await Response.json();
     // ResponseBody แสดง bodyของ Response หลังทำงานเสร็จเป็น json
     // console.log(ResponseBody);
-    expect.soft (ResponseBody.data.id).toBe(2);
-    // ตรวจสอบ ข้างใน data มี id = 2
-    expect.soft (ResponseBody.data.first_name).toContain('Janet');
-    // ตรวจสอบ ข้างใน data มี first_name = Janet
+    expect.soft (ResponseBody.id).toBe('1');
+    // // ตรวจสอบ ข้างใน data มี id = 1
+    expect.soft (ResponseBody.name).toContain('Google Pixel 6 Pro');
+    // // ตรวจสอบ ข้างใน data มี first_name = Google Pixel 6 Pro
+    // // ตรวจสอบ ข้างใน data มี id = 2
+    expect.soft (ResponseBody.name).toContain('Google Pixel 6 Pro');
+    // // ตรวจสอบ ข้างใน data มี first_name = Janet
+
     
 });
     
