@@ -4,7 +4,7 @@ test.describe('Check Box', () => {
 
     test('TC2', async ({ page }) => {
         
-        await page.goto("https://demoqa.com/");
+        await page.goto("https://demoqa.com/", { waitUntil: 'domcontentloaded' });
         await page.locator('//div [@class="card-body"]/h5[contains (text(),"Elements")]').click();
         await page.locator('//ul [@class="menu-list"]//span[text()="Check Box"]').click();
         await page.locator('//button [@class="rct-option rct-option-expand-all"]').click();
