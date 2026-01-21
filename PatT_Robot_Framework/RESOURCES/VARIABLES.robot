@@ -11,6 +11,10 @@ ${CB_BTN_EXPAND}    xpath=//button[@class="rct-option rct-option-expand-all"]
 ${CB_CHCK_DESKTOP}    xpath=//span[contains(@class,"rct-title") and text()="Desktop"]
 ${CB_RESULT_MSG}    xpath=//div[@class="display-result mt-4"]/span[text()="You have selected :"]
 #Demoqa Buttons
-${BT_Buttons}    xpath=//ul [@class="menu-list"]//span[text()="Buttons"]
+${BT_MENU_Buttons}    xpath=//ul [@class="menu-list"]//span[text()="Buttons"]
 ${BT_Click_Me}    xpath=//button[@type="button"and text()='Click Me']
 ${BT_RESULT_MSG}    xpath=//p[@id="dynamicClickMessage"]
+#Demoqa RadioButton
+${RB_MENU_RadioButton}    xpath=//ul [@class="menu-list"]//span[text()="Radio Button"]
+${RB_Yes_RadioButton}    xpath=//div[@class="custom-control custom-radio custom-control-inline"]//label[@for="yesRadio"]
+${RB_RESULT_MSG}    xpath=//span[@class="text-success" and text()='Yes']

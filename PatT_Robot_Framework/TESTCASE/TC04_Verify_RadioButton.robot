@@ -9,13 +9,13 @@ Test Teardown    Close Browser
 
 
 *** Test Cases ***
-Click Buttons Test    #ทดสอบการเลือก Click Buttons ในหน้า DemoQA
+Click RadioButton Test    #ทดสอบการเลือก RadioButton ในหน้า DemoQA
     Go To    ${Demoqa_URL}
     # คลิกที่ Elements และเลือกเมนู Buttons
     Click    ${CARD_ELEMENTS}
-    Click    ${BT_MENU_Buttons}
+    Click    ${RB_MENU_RadioButton}
     # คลิกที่ Click Me 
-    Click    ${BT_Click_Me}
-    # ตรวจสอบว่ามองเห็นข้อความ You have done a dynamic click หรือไม่)
-    Wait For Elements State    ${BT_RESULT_MSG}    visible    timeout=10s
-    Get Element States    ${BT_RESULT_MSG}    contains    visible
+    Click    ${RB_Yes_RadioButton}
+    # ตรวจสอบว่ามองเห็นข้อความ Yes หรือไม่)
+    Wait For Elements State    ${RB_RESULT_MSG}    visible    timeout=10s
+    Get Element States    ${RB_RESULT_MSG}    contains    visible

@@ -17,5 +17,5 @@ GET Body And verify  [Arguments]    ${PATHfortestHTTP}    ${Bodyexpectrd_respone
 
 Open My Browser
     New Browser   browser=chromium    headless=False
-    Set Browser Timeout    40s
+    Set Browser Timeout    50s
     New Page       ${Demoqa_URL}    wait_until=domcontentloaded
