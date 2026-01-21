@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    ตรวจสอบและหา XPath checkbox ของ https://demoqa.com
+Documentation    ตรวจสอบและหา XPath RadioButton ของ https://demoqa.com
 Resource    ../RESOURCES/VARIABLES.robot
 Resource    ../RESOURCES/KEYWORDS.robot
 
